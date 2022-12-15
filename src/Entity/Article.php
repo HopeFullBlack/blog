@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use Cocur\Slugify\Slugify;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
+use EsperoSoft\DateFormat\DateFormat;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
@@ -18,6 +20,9 @@ class Article
 
     #[ORM\Column(length: 60)]
     private ?string $title = null;
+    
+    #[ORM\Column(length: 255, nullable: false)]
+    private ?string $slug = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
@@ -37,7 +42,10 @@ class Article
 
     #[ORM\ManyToMany(targetEntity: Category::class, mappedBy: 'articles')]
     private Collection $categories;
-
+    
+    private string $fromNow;
+    
+    
     public function __construct()
     {
         $this->categories = new ArrayCollection();
@@ -56,7 +64,8 @@ class Article
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
+         # Pour recuperer le titre on utilise le $slug#
+        $this->setSlug(new Slugify())->slugify($this->title);
         return $this;
     }
 
@@ -143,6 +152,48 @@ class Article
         if ($this->categories->removeElement($category)) {
             $category->removeArticle($this);
         }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fromNow
+     *
+     * @return string
+     */
+    public function getFromNow(): string
+    {
+        return DateFormat::fromNow($this->createdAt);    }
+
+    /**
+     * Set the value of fromNow
+     *
+     * @param string $fromNow
+     *
+     * @return self
+     */
+   
+
+    /**
+     * Get the value of slug
+     *
+     * @return ?string
+     */
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set the value of slug
+     *
+     * @param ?string $slug
+     *
+     * @return self
+     */
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
