@@ -19,7 +19,8 @@ class BlogController extends AbstractController
         return $this->render('blog/index.html.twig',[
             'controller_name' => 'BlogController',
             'articles' => $articles,
-        ])
+        ]);
+
        
     ;
 
@@ -32,4 +33,15 @@ class BlogController extends AbstractController
     //         'controller_name' => 'BlogController',
     //     ]);
     }
-}
+    #[Route('/article/{slug}', name: 'app_single_article')]
+    public function single(ArticleRepository $repoArticle, string $slug): Response
+    {
+        $article = $repoArticle->findOneBySlug($slug);
+
+        // dd($articles);
+
+        return $this->render('blog/single.html.twig',[
+            'controller_name' => 'BlogController',
+            'article' => $article,
+        ]);
+}}

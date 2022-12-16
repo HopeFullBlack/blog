@@ -3,7 +3,10 @@
 {% block title %}Blog Jstore!{% endblock %}
 
 {% block body %}
-    <div class="articles">
+<div class="articles-infos">
+   <strong>{{articles | length}}</strong> articles retrouvés
+</div>
+<div class="articles">
         {% for article in articles %}
             <a href="article/{{ article.slug}}" class="article-item">
                 <div class="article-image">

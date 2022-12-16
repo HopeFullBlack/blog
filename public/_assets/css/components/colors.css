@@ -1,3 +1,5 @@
 :root{
-    --main-color : #008080;
+    --main-color: #045151;
+    --main-color-white: rgb(0, 198, 198);
+    --main-gradient: radial-gradient(var(--main-color), var(--main-color-white), var(--main-color));
 }

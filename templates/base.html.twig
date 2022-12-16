@@ -18,11 +18,19 @@
     <body>
 
     <header>
-    <h2>Blog</h2>
+        <a href="/">
+            <h2>Blog</h2>
+        <nav>
+            <ul class="nav-bar flex">
+                <li class="nav-item"><a href="">About</a></li>
+                <li class="nav-item"><a href="">Categories</a></li>
+                <li class="nav-item"><a href="">Contact</a></li>
+            </ul>
+        </nav>
+        </a>
     </header>
     <div class="container">
         {% block body %}{% endblock %}
     
     </div>
-    </body>
-</html>
+    
