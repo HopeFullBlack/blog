@@ -64,8 +64,9 @@ class Article
     public function setTitle(string $title): self
     {
         $this->title = $title;
-         # Pour recuperer le titre on utilise le $slug#
-        $this->setSlug(new Slugify())->slugify($this->title);
+
+        $this->setSlug((new Slugify())->slugify($this->title));
+        
         return $this;
     }
 

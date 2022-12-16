@@ -5,7 +5,7 @@
 {% block body %}
     <div class="articles">
         {% for article in articles %}
-            <a href="" class="article-item">
+            <a href="article/{{ article.slug}}" class="article-item">
                 <div class="article-image">
                     <img src={{ article.imageUrl }}  alt="Image de l'aricle : {{ article.title }}">
                 </div>
