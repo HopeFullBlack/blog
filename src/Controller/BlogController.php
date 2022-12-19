@@ -4,43 +4,38 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use App\Repository\CategoryRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Services\CategoriesServices;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BlogController extends AbstractController
 {
+    public function __construct(CategoriesServices $categoriesServices)
+    {
+        $categoriesServices->updateSession();
+    }
     #[Route('/', name: 'app_hello')]
-    public function hello(ArticleRepository $repoArticle, CategoryRepository $repoCat): Response
+    public function hello(Request $request, ArticleRepository $repoArticle, CategoryRepository $repoCat): Response
     {
         $articles = $repoArticle->findAll();
         $categories = $repoCat->findAll();
-
-        // dd($articles);
-
+   
         return $this->render('blog/index.html.twig',[
             'controller_name' => 'BlogController',
             'articles' => $articles,
-            'categories' => $categories,
+          
         ]);
 
        
     ;
 
-    // #[Route('/blog/{id}/{name}', requirements: ["name" => "[a-zA-Z]{3,50}", "id" => "[0-9]{1,50}"], name: 'app_blog')]
-    // public function index(int $id, string $name): Response
-    // {
-    //     return $this->render('blog/index.html.twig', [
-    //         'id' => $id,
-    //         'name' => $name,
-    //         'controller_name' => 'BlogController',
-    //     ]);
     }
     #[Route('/article/{slug}', name: 'app_single_article')]
-    public function single(ArticleRepository $repoArticle, string $slug, CategoryRepository $repoCat): Response
+    public function single(ArticleRepository $repoArticle, string $slug, ): Response
     {
         $article = $repoArticle->findOneBySlug($slug);
-        $categories = $repoCat->findAll();
 
 
         // dd($articles);
@@ -48,6 +43,23 @@ class BlogController extends AbstractController
         return $this->render('blog/single.html.twig',[
             'controller_name' => 'BlogController',
             'article' => $article,
-            'categories' => $categories,
+            
+        ]);
+    }
+
+    #[Route('/category/{slug}', name: 'app_article_by_category')]
+    public function article_by_category(ArticleRepository $repoArticle, string $slug, CategoryRepository $repoCat): Response
+    {
+        $category = $repoCat->findOneBySlug($slug);
+
+        $articles=[];
+        if($category){
+            $articles = $category-> getArticles()->getValues();  
+      }
+
+        return $this->render('blog/articles_by_category.html.twig',[
+            'controller_name' => 'BlogController',
+            'articles' => $articles,
+            'category' => $category,
         ]);
 }}

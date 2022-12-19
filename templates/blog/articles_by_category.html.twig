@@ -4,6 +4,7 @@
 
 {% block body %}
 <div class="articles-infos">
+   <p>Articles de la catégorie  : <strong>{{category.name}}</strong>  </p>
    <strong>{{articles | length}}</strong> articles trouvés.
 </div>
 <div class="articles">
@@ -21,7 +22,7 @@
                     <div class="article-content-details">
                         <h2 class="article-title"> {{ article.title }} </h2>
                         <div class="article-createdAt"> {{ article.fromNow }} </div>
-                    </div>
+               </div>
                 </div>
             </a>
         {% endfor %}
