@@ -32,6 +32,10 @@ class Category
 
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+   
+    #[ORM\Column(nullable: false)]
+    private ?string $slug;
+
 
     public function __construct()
     {
@@ -51,6 +55,7 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
+        $this->setSlug((new Slugify())->slugify($this->name));
 
         return $this;
     }
@@ -123,6 +128,30 @@ class Category
     public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of slug
+     *
+     * @return ?string
+     */
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set the value of slug
+     *
+     * @param ?string $slug
+     *
+     * @return self
+     */
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

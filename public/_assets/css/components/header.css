@@ -1,5 +1,49 @@
-ul{ 
+.entete{ 
    list-style-type: none;
-    gap: 20px;
+    gap: 50px;
+   text-transform: uppercase;
+   display: flex;
+   height: 100%;
+}
+
+ul li{
+    position: relative;
+    height: 80px;
     display: flex;
+    align-items: center;
+}ul li:hover ul{
+
+   display: block;
+}
+ul li ul{
+    list-style-type: none;
+    position: absolute;
+    top: 60px;
+    left: 25px;
+    background-color: rgb(255, 255, 255);
+    color: var(--main-color);
+    padding: 0;
+    min-width: 300px;
+    border-radius: 20px;
+    display: none;
+}
+
+ul li ul li{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    white-space: nowrap;
+ 
+}
+
+ul li ul li a{
+    overflow: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+}
+ul li ul li:hover{
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 20px;
 }

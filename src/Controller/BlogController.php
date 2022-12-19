@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,15 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class BlogController extends AbstractController
 {
     #[Route('/', name: 'app_hello')]
-    public function hello(ArticleRepository $repoArticle): Response
+    public function hello(ArticleRepository $repoArticle, CategoryRepository $repoCat): Response
     {
         $articles = $repoArticle->findAll();
+        $categories = $repoCat->findAll();
 
         // dd($articles);
 
         return $this->render('blog/index.html.twig',[
             'controller_name' => 'BlogController',
             'articles' => $articles,
+            'categories' => $categories,
         ]);
 
        
@@ -34,14 +37,17 @@ class BlogController extends AbstractController
     //     ]);
     }
     #[Route('/article/{slug}', name: 'app_single_article')]
-    public function single(ArticleRepository $repoArticle, string $slug): Response
+    public function single(ArticleRepository $repoArticle, string $slug, CategoryRepository $repoCat): Response
     {
         $article = $repoArticle->findOneBySlug($slug);
+        $categories = $repoCat->findAll();
+
 
         // dd($articles);
 
         return $this->render('blog/single.html.twig',[
             'controller_name' => 'BlogController',
             'article' => $article,
+            'categories' => $categories,
         ]);
 }}
