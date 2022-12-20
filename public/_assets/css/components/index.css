@@ -19,6 +19,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 header h2{
+    
     padding-left: 30px;
     text-shadow: 1px 1px 25px #1d1d1d;
 
@@ -42,3 +43,5 @@ a{
     border-radius: 40px;
     padding: 2px 5px;
 }
+
+ 
