@@ -1,6 +1,57 @@
 table{
+    width: 1500px;
     border-collapse: collapse;
+    margin: auto;
 }
 table td, table th{
     border: 1px solid #ccc;
 }
+th{
+    background-color: rgba(0, 0, 0, 0.841);
+height: 40px;
+padding: 10px;
+color: #ccc ;
+}
+table td{
+    height: 200px;
+    overflow: hidden;
+}
+.article-content{
+    overflow: hidden;
+}
+
+table td img{
+    width: auto;
+    height: 100%;
+    padding: 5px;
+}
+.flex{
+    display: grid;
+    margin: 2px;
+    justify-content: space-between;
+    gap: 20px;
+}
+.boutons{
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 550px;
+}
+.select2-container {
+    width: 300px;
+    
+}
+.select2-selection__choice{
+    height: auto;
+
+}
+table td form{
+    margin: 0 ! important;
+   
+}
+.bouton{
+    display: inline-flex;
+    justify-items: center;
+    gap: 10px;
+}
+

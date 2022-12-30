@@ -1,5 +1,5 @@
 .form-group{
-    margin: 20px 0;
+    margin: auto;
     flex-direction: column;
 }
 
@@ -21,6 +21,8 @@ form select{
 }
 
 form input{
+    
+    margin-bottom: 10px;
     min-height: 30px;
     border: 1px solid #ccc;
     outline: none;
@@ -31,10 +33,12 @@ form input{
 }
 
 form{
-    max-width: 600px;
-    width: 90%;
+    justify-content: center;
+    text-align: center;
+    width: 1500px;
     margin: auto;
-    height: 100%;
+    display: grid;
+    gap: 2px;
 }
 form .label-container{
     /* display: none; */
@@ -49,7 +53,7 @@ form ul {
     order: 2;
 }
 form ul li{
-    color: red !important;
+    color: rgb(119, 118, 118) !important;
     flex-direction: column;
 }
 .title{
@@ -60,5 +64,10 @@ form ul li{
     text-align: center;
 }
 .btn:hover{
-    background-color: #045151 ;
+    background-color: #0dd6d6 ;
+}
+.image-preview img {
+    width: 200px;
+    height: auto;
+
 }

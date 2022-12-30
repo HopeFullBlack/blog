@@ -23,7 +23,6 @@
 	<body>
 
 		<header>
-			
 			<a href="/">
 				<h2>Hope's Blog</h2>
 				<nav>
@@ -39,7 +38,8 @@
 							
 							
 							{% endfor %}
-                              
+                                {# <li class="nav-item">Category 2</li>
+                                <li class="nav-item">Category 3</li> #}
                             </ul>
 						
 						<li class="nav-item"><a href="/contact">Contact</a></li>
@@ -54,21 +54,20 @@
 						{% endif %}
 						
 					</ul>
-					
 				</nav>
 			</a>
-			 
+		
 		</header>
-		{% block slider %}
-			<nav>
-
-			</nav>
-		{% endblock %}
-    
-        {% block body %}{% endblock %}
-
+            {% block body %}
+		<main>
+<section>
+	<div>
 		
-		
+	</div>
+</section>
+        </main>
+	
+			{% endblock %}
 
 			</div>
 
@@ -78,7 +77,6 @@
 </footer>
 
 	<script src="/_assets/js/jquery-3.6.1.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.0.2/readmore.min.js" integrity="sha512-llWtDR3k09pa9nOBfutQnrS2kIEG7M6Zm7RIjVVLNab1wRs8NUmA0OjAE38jKzKeCg+A3rdq8AVW41ZTsfhu5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/_assets/js/select2.js"></script>
     <script src="/_assets/js/editor.js"></script>
     

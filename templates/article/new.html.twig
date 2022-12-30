@@ -1,20 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Article{% endblock %}
+{% block title %}Nouvel Article{% endblock %}
 
 {% block body %}
     
 
-    {{ include('article/_form.html.twig', { title : "Create new Article" }) }}
+    {{ include('article/_form.html.twig', { title : "Create new Article", required: "required" }) }}
+<div class="boutons">
 
-    <a href="{{ path('app_article_index') }}">back to list</a>
+    <a class="btn" href="{{ path('app_article_index') }}">Annuler</a>
+    
+    
+
+</div>
 {% endblock %}
 
         {% block javascripts %}
 
     <script>
-        $(document).ready(function() {
+       $(document).ready(function() {
             $('.choices_categories').select2();
+            $("input[type='file']").change(function(){
+                var file = $(this).get(0).files[0]
+                if(file){
+                    var reader = new FileReader();
+                    reader.onload = function(){
+                        console.log(file);
+                        var img = `<img src='${reader.result}' alt="Preview Image" />`;
+                        $(".image-preview").html(img)
+                    }
+                    reader.readAsDataURL(file)
+                }
+            })
         });
 
         // Afficher des options de mise ne page sur le texte de creation dArticle

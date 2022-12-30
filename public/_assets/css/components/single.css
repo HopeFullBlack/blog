@@ -1,9 +1,10 @@
 .single-article {
     margin: auto;
+    
 }
 .single-article .article-image img{
     height: 300px;
-    width: 70%;
+    width: auto;
     box-shadow: 2px 2px 13px #ccc;
     margin: 2%;
     border: 3px solid #280c77;
@@ -20,9 +21,13 @@
     
 }
 .article-content-details{
-    margin: 1%;
+    margin: 1px;
+    padding-left: 40px;
+
 }
 .content{
     text-align: justify;
+    margin: 1px;
+    padding-left: 40px;
 }
 

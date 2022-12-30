@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use Doctrine\Common\Annotations\Annotation\Required;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -20,6 +21,7 @@ class ArticleType extends AbstractType
         $builder
             ->add('title', TextType::class,[
                 'label' => false,
+                
                 'attr' => [
                     'placeholder' => "Titre de l'article", 
                     'class' => 'flex-1'
@@ -48,7 +50,7 @@ class ArticleType extends AbstractType
                     'class' => 'flex-1'
                 ],
                 'row_attr' => [
-                    'class' => 'form-group flex'
+                    'class' => 'form-group '
                 ]
             ])
             ->add('categories', EntityType::class, [
@@ -62,7 +64,7 @@ class ArticleType extends AbstractType
                     'class' => 'flex-1 choices_categories'
                 ],
                 'row_attr' => [
-                    'class' => 'form-group flex'
+                    'class' => 'form-group '
                 ]
 
             ])

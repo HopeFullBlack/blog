@@ -47,7 +47,7 @@ class BlogFixtures extends Fixture
         $names = [
             "Actualités",
             "Economie",
-            "Formation Mudey",
+            "Loisirs",
             "Sports",
             "Politique",
             "Divers",

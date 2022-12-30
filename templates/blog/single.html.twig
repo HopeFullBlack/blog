@@ -38,6 +38,12 @@
 		<div class="content">
 			{{article.content | raw}}
 		</div>
+        {% if app.user is same as (article.author) %}
+       <div class="action animate__backInUp">
+            <a href="{{ path('app_article_edit', {'id': article.id}) }}" class="btn"> Edit</a>
+       </div>
+            
+        {% endif %}
 	</div>
 
 {% endblock %}
