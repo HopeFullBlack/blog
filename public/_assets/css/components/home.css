@@ -10,8 +10,8 @@
 .articles .article-item{
     border: 2px solid #ccc;
     box-shadow: 2px 2px 13px #ccc;
-    width: 100%;
-    max-width: 300px;
+    width: 200%;
+    max-width: 252px;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
@@ -40,6 +40,7 @@
     font-size: 1.1rem;
 }
 .articles-infos{
+    margin-top: 60px;
     text-align: center;
     padding: 10px 0 ;
 }
