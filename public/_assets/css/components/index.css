@@ -78,3 +78,8 @@ footer{
     gap: 260px;
     margin-left: 30px;
 }
+p{
+    padding: 10px;
+    text-align: justify;
+    font-size: smaller;
+}

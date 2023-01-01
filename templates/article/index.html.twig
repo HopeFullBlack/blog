@@ -3,6 +3,7 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
+   <div class="container">
     <h1>Mes Articles</h1>
 <div class="flex">
         <a class="btn" href="{{ path('app_article_new') }}">Create new</a>
@@ -13,11 +14,10 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                
-                <th>Content</th>
-                <th>ImageUrl</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
+                              <th>Description</th>
+                <th>Image</th>
+                <th>Date de Création</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -33,9 +33,11 @@
                 <td>{{ article.createdAt ? article.fromNow : '' }}</td>
                 <td>
                     <div class="bouton">
+                    {{ include('article/_delete_form.html.twig') }}
                         <a class="btn" href="{{ path('app_article_show', {'id': article.id}) }}">Voir</a>
                         <a class="btn" href="{{ path('app_article_edit', {'id': article.id}) }}">Modifier</a>
-                          {{ include('article/_delete_form.html.twig') }}
+                       
+                          
                     </div>
                     </td>
             </tr>
@@ -46,7 +48,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
 {% endblock %}
 {% block javascripts %}
 			<script>
