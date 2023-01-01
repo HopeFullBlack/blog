@@ -1,4 +1,5 @@
 .slider{
+    margin-top: -100px;
     height: 600px;
     background-image: url("../../images/home.jpg");
     background-repeat: no-repeat;
@@ -12,7 +13,7 @@
     
 }
 .slider-content{
-    background-color: rgb(0 0 0 /60%);
+    background-color: rgb(0 0 0 /70%);
     color: white;
     padding: 20px;
     border-radius: 10px;

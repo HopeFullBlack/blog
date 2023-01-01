@@ -33,12 +33,13 @@ form input{
 }
 
 form{
+    margin-top: 20px;
     justify-content: center;
     text-align: center;
     width: 1500px;
-    margin: auto;
+    margin-left: 150px;
     display: grid;
-    gap: 2px;
+    gap: 10px;
 }
 form .label-container{
     /* display: none; */
@@ -59,6 +60,7 @@ form ul li{
 .title{
     margin: auto;
     text-align: center;
+    padding: 10px;
  }
 #contact{
     text-align: center;

@@ -6,7 +6,7 @@
 
 
 {{ form_start(contact) }}
-<h2 class="title">Contact Us</h2>
+<h2 class="title">Contactez-Nous</h2>
     {% for message in app.session.flashBag.get("message") %}
         <div class="alert {{ app.session.get("status") }}">{{ message }}</div>
     {% endfor %}

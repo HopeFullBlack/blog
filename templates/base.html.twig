@@ -9,109 +9,110 @@
 		<link
 		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-			
+
 
 		{% block stylesheets %}
 
-		
+
 			<link rel="stylesheet" href="/_assets/css/main.css">
-			
+
 		{% endblock %}
 
-		
+
 	</head>
 	<body>
 
 		<header>
-			
+
 			<a href="/">
 				<h2>Hope's Blog</h2>
 				<nav>
-					<ul class="nav-bar entete " >
+					<ul class="nav-bar entete ">
 						<li class="nav-item">
 							<a href="">About</a>
 						</li>
 						<li class="nav-item flex ">
 							<a href="#">Categories</a>
-                            <ul class="nav-bar">
-							{% for category in app.session.get("categories") %}
-                                <li class="nav-item"><a href="category/{{category.slug}}">{{category.name}}</a>({{category.articles | length}})</li>
-							
-							
-							{% endfor %}
-                              
-                            </ul>
-						
-						<li class="nav-item"><a href="/contact">Contact</a></li>
-						</li>
-						{% if app.user %}
-						<li class="nav-item"><a href="/account">Mon Compte</a></li>
-						<li class="nav-item"><a href="/logout">Logout</a></li>
-							{% else %}
-						<li class="nav-item"><a href="/login">Connexion</a></li>
-						<li class="nav-item"><a href="/register">S'inscrire</a></li>
+							<ul class="nav-bar">
+								{% for category in app.session.get("categories") %}
+									<li class="nav-item">
+										<a href="category/{{category.slug}}">{{category.name}}</a>({{category.articles | length}})</li>
 
-						{% endif %}
-						
-					</ul>
-					
-				</nav>
-			</a>
-			 
-		</header>
-		{% block slider %}
-			<nav>
+
+								{% endfor %}
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a href="/contact">Contact</a>
+						</li>
+					</li>
+					{% if app.user %}
+						<li class="nav-item">
+							<a href="/account">Mon Compte</a>
+						</li>
+						<li class="nav-item">
+							<a href="/logout">Logout</a>
+						</li>
+					{% else %}
+						<li class="nav-item">
+							<a href="/login">Connexion</a>
+						</li>
+						<li class="nav-item">
+							<a href="/register">S'inscrire</a>
+						</li>
+
+					{% endif %}
+
+				</ul>
 
 			</nav>
-		{% endblock %}
-    
-        {% block body %}{% endblock %}
+		</a>
+	</body>
+</header>{% block slider %}<div class="slider">
+        <div class="slider-content">
+            <h2>Hope Blog</h2>
+            <p>Plusieurs articles publiés chaque jour !</p>
+                          
+            </a>
+        </div>
+    </div>
+<nav></nav>{% endblock %}
+{% block body %}{% endblock %}</div>
 
-		
-		
+<footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary"><div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+<div class="row">
+	<div class="col-lg-3 mb-3">
+		<h2HopeAccueil</h5 <a href="/">HOPE BLOG</h2> <p> Partagez ici vos passions, vos idées... </p> </ul> </div> <div class="col-6 col-lg-2 offset-lg-1 mb-3"> <h5> <a href="/">
+			<h5>About</h5>
+			<h5>
+				<a href="/contact">Contact</a>
+			</h5>
+			<h5>
+				<a href="/account">Mon Compte</a>
+			</h5>
+
+		</div>
+		<div class="col-6 col-lg-2 offset-lg-1 mb-3 ">
+			<h5>
+				<a href="/login">Connexion</a>
+			</h5>
+			<h5>
+				<a href="/logout">Deconnexion</a>
+			</h5>
+			<h5>
+				<a href="/register">Inscription</h5>
+
 
 			</div>
+			<h5>Merci pour votre visite</h5>
+		</div>
+	</footer>
 
-
-
-				
-                <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
-  <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
-    <div class="row">
-      <div class="col-lg-3 mb-3">
-	  <h2 <a href="/">Hope Blog</h2>
-          <p>
-          Partagez ici vos passions, vos idées... 
-		  </p>
-          
-        </ul>
-      </div>
-    
-      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-        <h5 <a href="/">Accueil</h5>
-        <h5>About</h5>
-        <h5 <a href="/contact">Contact</a></h5>
-        <h5 <a href="/account">Mon Compte</a></h5>
-       
-    </div>
-      <div class="col-6 col-lg-2 offset-lg-1 mb-3 ">
-        <h5 <a href="/login">Connexion</a></h5>
-        <h5 <a href="/logout">Deconnexion</a></h5>
-        <h5 <a href="/register">Inscription</h5>
-        <h5>Merci pour votre visite</h5>
-       
-    </div>
-  </div>
-</footer>
- 
 
 	<script src="/_assets/js/jquery-3.6.1.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.0.2/readmore.min.js" integrity="sha512-llWtDR3k09pa9nOBfutQnrS2kIEG7M6Zm7RIjVVLNab1wRs8NUmA0OjAE38jKzKeCg+A3rdq8AVW41ZTsfhu5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/_assets/js/select2.js"></script>
-    <script src="/_assets/js/editor.js"></script>
-    
-	{% block javascripts %}
-			
-		{% endblock %}
-		</body>
-	</html>
+	<script src="/_assets/js/select2.js"></script>
+	<script src="/_assets/js/editor.js"></script>
+
+	{% block javascripts %}{% endblock %}
+</body></html>

@@ -7,6 +7,7 @@ body {
 }
 header{
     background-color: var(--main-color);
+    opacity: 70%;
     color: white;
     height: 100px;
     display: flex;
@@ -15,6 +16,9 @@ header{
     position: sticky;
     top: 0;
   
+}
+header:hover{
+    opacity: 100%;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -62,6 +66,7 @@ a{
 
 }
 footer{
+   
     margin-top: 100px;
     background-color: black;
     display: flex;
@@ -71,5 +76,5 @@ footer{
 .row{
     display: flex;
     gap: 260px;
-    margin-left: 235px;
+    margin-left: 30px;
 }

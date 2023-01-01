@@ -16,6 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/account')]
 class ArticleController extends AbstractController
 {
+    
     private $uploadFile;
     private $em;
     public function __construct(CategoriesServices $categoriesServices, UploadFile $uploadFile, EntityManagerInterface $em){
