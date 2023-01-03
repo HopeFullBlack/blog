@@ -11,7 +11,7 @@
     border: 2px solid #ccc;
     box-shadow: 2px 2px 13px #ccc;
     width: 200%;
-    max-width: 252px;
+    max-width: 300px;
     background-color: rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 10px;
@@ -24,7 +24,7 @@
 }
 .articles .article-item .article-details{
     padding: 5px;
-    gap: 5px;
+    
 }
 .articles .article-item .article-image img{
     width: 100%;
@@ -47,4 +47,7 @@
     margin-top: 60px;
     text-align: center;
     padding: 10px 0 ;
+}
+.doubleclasse{
+    display: flex;
 }

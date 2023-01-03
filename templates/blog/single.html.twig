@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block body %}
+<div class="container doubleclasse">
+
 	<div class="single-article">
         <div class="article-details flex">
             <div class="article-author-details">
                 <div class="article-author-picture">
-{%if article.author.profile.picture is defined %}
+                            {%if article.author.profile.picture is defined %}
                                 <img src={{ article.author.profile.picture }}  alt="image de profile de {{article.author.fullname}}">
                             {%else%}
                                 <img src="/_assets/images/avatar_jstore.webp"  alt="image de profile de {{article.author.fullname}}">
@@ -46,5 +48,20 @@
         {% endif %}
 	</div>
 
+<aside class="categories ">
+<ul>
+    <li><a href="">Categorie d'article 1</a></li>
+    <li><a href="">Categorie d'article 1</a></li>
+    <li><a href="">Categorie d'article 1</a></li>
+    <li><a href="">Categorie d'article 1</a></li>
+</ul>
+</aside>
+
+
+
+
+
+
+</div>
 {% endblock %}
  

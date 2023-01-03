@@ -16,9 +16,11 @@ color: #ccc ;
 table td{
     height: 200px;
     overflow: hidden;
+    text-align: center;
 }
 .article-content{
     overflow: hidden;
+    height: 300px;
 }
 
 table td img{

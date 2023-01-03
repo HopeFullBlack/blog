@@ -6,13 +6,7 @@
     
 
     {{ include('article/_form.html.twig', { title : "Create new Article", required: "required" }) }}
-<div class="boutons">
 
-    <a class="btn" href="{{ path('app_article_index') }}">Annuler</a>
-    
-    
-
-</div>
 {% endblock %}
 
         {% block javascripts %}
@@ -34,15 +28,7 @@
             })
         });
 
-        // Afficher des options de mise ne page sur le texte de creation dArticle
-          ClassicEditor
-                                .create( document.querySelector( '#article_content' ) )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
+        
         
     </script>
 {% endblock %}
