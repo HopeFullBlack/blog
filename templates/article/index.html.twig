@@ -3,12 +3,13 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-   
+   <div class="container">
     <h1>Mes Articles</h1>
 <div class="flex">
         <a class="btn" href="{{ path('app_article_new') }}">Créer un nouvel article</a>
 
-</div>
+   
+   </div>
     <table class="table">
         <thead>
             <tr>
@@ -50,6 +51,7 @@
         {% endfor %}
         </tbody>
     </table>
+</div>
 </div>
 {% endblock %}
 {% block javascripts %}

@@ -22,7 +22,7 @@ header:hover{
 }
 
 h1,h2,h3,h4,h5,h6{
-    margin: 2;
+    margin: 2 !important; 
    
 }
 
@@ -32,11 +32,13 @@ header h2{
     text-shadow: 1px 1px 25px #1d1d1d;
 
 }
+
 .container{
     padding-left: 40px;
     width: 100%;
     max-width: 1500px;
     margin: 50px auto;
+    
 
 }
 
@@ -82,4 +84,15 @@ p{
     padding: 10px;
     text-align: justify;
     font-size: smaller;
+}
+
+.titrentete {
+    margin: auto;
+    width: 601px;
+    background-color: #045151;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 5px;
+    margin-bottom: 50px;
+    opacity: 50%;
 }

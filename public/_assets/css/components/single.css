@@ -29,6 +29,11 @@
     text-align: justify;
     margin: 1px;
     padding-left: 40px;
+    width: 1000px;
+}
+
+.categories{
+    width: 500px;
 }
 
 

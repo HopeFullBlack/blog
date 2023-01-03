@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block body %}
+<div >
+            <a href="/" class="btn"> Accueil</a>
+       </div>
 <div class="container doubleclasse">
 
 	<div class="single-article">
@@ -27,7 +30,7 @@
                 <div class="article-categories flex wrap">
                     {% for category in article.categories %}
                         
-                    <a href="/category/{{category.slug}}" class="article-category-item badge">
+                    <a href="/category/{{category.slug}}" class="article-category-item badge">Catégorie :
                         {{ category.name }} ({{ category.articles | length }} article(s) publié(s))
                     </a>
                     {% endfor %}

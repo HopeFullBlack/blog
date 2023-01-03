@@ -12,8 +12,10 @@
     </div>
 {% endblock %}
 {% block body %}
+
 <div class="articles-infos">
-   <strong>{{articles | length}}</strong> articles trouvés.
+<h1 class="titrentete">ACTUALITÉS</h1>
+   <strong>{{articles | length}}</strong> articles en lignes.
 </div>
 <div class="articles">
         {% for article in articles %}
